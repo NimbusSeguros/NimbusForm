@@ -1,6 +1,10 @@
+interface dataImg {
+    id: number,
+    titulo: string,
+    foto: string
+}
 
-
-export const dataImg = [
+export const dataImg:dataImg[] = [
     {
         id: 1,
         titulo: "RUS Rio Uruguay Seguros",
@@ -51,9 +55,5 @@ export const dataImg = [
         titulo: "Integrity",
         foto: "https://res.cloudinary.com/dkk8nbi3b/image/upload/v1723477322/INTEGRITY_nlrpmd.png"
     },
-    // {
-    //     id: 11,
-    //     titulo: "Zurich",
-    //     foto:"https://res.cloudinary.com/dkk8nbi3b/image/upload/v1721840352/Zurich_y6ccjo.png"
-    // }
+    
 ]

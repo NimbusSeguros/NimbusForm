@@ -3,6 +3,8 @@ import FeaturesSection from './components/FeaturesSection'
 import Headers from './components/Headers'
 import UniqueFeatures from './components/UniqueFeatures'
 import PageCarrousel from './components/PageCarrousel'
+import { ImgCompanias } from './components/ImgCompanias'
+
 
 function App() {
  
@@ -13,6 +15,7 @@ function App() {
       <FeaturesSection/>
       <UniqueFeatures/>
       <PageCarrousel/>
+      <ImgCompanias/>
     </>
   )
 }
