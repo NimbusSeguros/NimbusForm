@@ -1,9 +1,6 @@
 import { Card, CardContent } from "./card"
 
-interface TestimonialCardProps {
-    name: string
-    quote: string
-  }
+
   
   interface TestimonialCardProps {
     name: string
