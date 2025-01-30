@@ -1,19 +1,18 @@
-
-
 import './App.css'
+import FeaturesSection from './components/FeaturesSection'
+import Headers from './components/Headers'
+import UniqueFeatures from './components/UniqueFeatures'
+import PageCarrousel from './components/PageCarrousel'
 
 function App() {
  
 
   return (
     <>
-    <div className='text-black bg-gray-200 p-4 '>
-    <h1 className="text-3xl font-bold underline ">
-    Hello world!
-  </h1>
-  <p className="text-lg  "> asdas</p>
-    </div>
-
+      <Headers/>
+      <FeaturesSection/>
+      <UniqueFeatures/>
+      <PageCarrousel/>
     </>
   )
 }
