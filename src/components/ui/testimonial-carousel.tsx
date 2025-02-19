@@ -29,7 +29,7 @@ import { testimonials } from "../../data/dataTestimonial"
   
     return (
       <section className="w-full">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:-px-20 lg:px-8">
           <div className="relative overflow-hidden">
             <div
               className="flex transition-transform duration-300 ease-in-out"
@@ -52,8 +52,8 @@ import { testimonials } from "../../data/dataTestimonial"
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={cn(
-                    "w-7 h-2 transition-colors",
-                    currentSlide === index ? "bg-blue-600" : "bg-gray-200 rounded-full"
+                    "w-2.5 h-2.5 cursor-pointer transition-colors rounded-full",
+                    currentSlide === index ? "bg-[#0000FF]" : "bg-[#D9D9D9]"
                   )}
                   aria-label={`Go to slide ${index + 1}`}
                 />

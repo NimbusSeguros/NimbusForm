@@ -4,7 +4,8 @@ import Headers from './components/Headers'
 import UniqueFeatures from './components/UniqueFeatures'
 import PageCarrousel from './components/PageCarrousel'
 import { ImgCompanias } from './components/ImgCompanias'
-
+import ContactForm from './components/ContactForm'
+import FullScreenVideo from './components/FullScreenVideo'
 
 function App() {
  
@@ -15,7 +16,9 @@ function App() {
       <FeaturesSection/>
       <UniqueFeatures/>
       <PageCarrousel/>
+      <ContactForm/>
       <ImgCompanias/>
+      <FullScreenVideo/>
     </>
   )
 }

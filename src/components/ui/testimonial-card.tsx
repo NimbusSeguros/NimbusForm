@@ -1,4 +1,4 @@
-import { Card, CardContent } from "./card"
+import { Card, CardContent } from "./Card"
 
 
   
@@ -11,7 +11,7 @@ import { Card, CardContent } from "./card"
     return (
       <Card className="relative h-full bg-white rounded-lg shadow-md  border border-gray-100">
         <CardContent className="p-6 lg:p-4 flex flex-col h-full">
-          <div className="absolute top-6 right-6 w-8 h-8">
+          <div className="absolute top-4 right-4 w-8 h-8">
             <img
               src="https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089633/Icono_opiniones_rvukd1.png"
               alt=""

@@ -1,0 +1,197 @@
+"use client"
+
+import * as React from "react"
+import { useState } from "react"
+
+const cn = (...classes: string[]) => classes.filter(Boolean).join(" ")
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    nombreApellido: "",
+    email: "",
+    telefono: "",
+    provincia: "",
+    consulta: "",
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle form submission
+    console.log(formData)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  return (
+    <div
+      className="min-h-screen w-full bg-cover bg-center flex items-center justify-center p-4"
+      style={{
+        backgroundImage: `url('https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089633/Fondo_degrade_wse41g.png')`,
+      }}
+    >
+      <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-2 p-6">
+        {/* Left side - Image */}
+
+        <div className="w-full md:w-1/2">
+          <div className="relative w-full aspect-square md:aspect-auto md:h-[600px]">
+            <div>
+              <h1 className="text-xl text-white text-[17px] font-bold mb-4 -ml-10">
+                ¿Sos PAS y querés alcanzar mejores resultados?
+              </h1>
+              <p className="text-white text-lg -ml-10 w-full max-w-[1200px] whitespace-normal text-xl:text-[17px]">
+                Estamos listos para acompañarte. Completá el formulario y empezá a formar parte de nuestra red.
+              </p>
+            </div>
+
+            <img
+              src="https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089646/Foto_equipo_cojyrv.png"
+              alt="Equipo Nimbus"
+              className="w-full h-full object-contain -ml-25 -mt-15 2xl:-ml-105 2xl:w-250% 2xl:h-full"
+            />
+          </div>
+        </div>
+
+        {/* Right side - Form */}
+        <div className="w-full md:w-1/2 space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-7 mt-20">
+            <Input
+              name="nombreApellido"
+              placeholder="Nombre y Apellido"
+              value={formData.nombreApellido}
+              onChange={handleChange}
+            />
+
+            <Input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input
+                name="telefono"
+                type="tel"
+                placeholder="Teléfono"
+                value={formData.telefono}
+                onChange={handleChange}
+              />
+
+              <Select name="provincia" value={formData.provincia} onChange={handleChange}>
+              <option value="buenosaires">Selecciona una provincia</option>
+                <option value="buenosaires">Buenos Aires</option>
+                <option value="catamarca">Catamarca</option>
+                <option value="chaco">Chaco</option>
+                <option value="chubut">Chubut</option>
+                <option value="cordoba">Córdoba</option>
+                <option value="corrientes">Corrientes</option>
+                <option value="entre_rios">Entre Ríos</option>
+                <option value="formosa">Formosa</option>
+                <option value="jujuy">Jujuy</option>
+                <option value="lapampa">La Pampa</option>
+                <option value="larioja">La Rioja</option>
+                <option value="mendoza">Mendoza</option>
+                <option value="misiones">Misiones</option>
+                <option value="neuquen">Neuquén</option>
+                <option value="rio_negro">Río Negro</option>
+                <option value="salta">Salta</option>
+                <option value="san_juan">San Juan</option>
+                <option value="san_luis">San Luis</option>
+                <option value="santacruz">Santa Cruz</option>
+                <option value="santafe">Santa Fe</option>
+                <option value="santiago_estero">Santiago del Estero</option>
+                <option value="tierra_fuego">Tierra del Fuego</option>
+                <option value="tucuman">Tucumán</option>
+              </Select>
+            </div>
+
+            <Textarea
+              name="consulta"
+              placeholder="Escriba su mensaje"
+              value={formData.consulta}
+              onChange={handleChange}
+              maxLength={250}
+            />
+
+            <div className="flex justify-end">
+              <Button type="submit">Enviar</Button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Input component
+const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
+  ({ className = "", ...props }, ref) => {
+    return (
+      <input
+        className={cn(
+          "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Input.displayName = "Input"
+
+// Textarea component
+const Textarea = React.forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttributes<HTMLTextAreaElement>>(
+  ({ className = "", ...props }, ref) => {
+    return (
+      <textarea
+        className={cn(
+          "flex min-h-[80px] w-full rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Textarea.displayName = "Textarea"
+
+// Select component
+const Select = React.forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSelectElement>>(
+  ({ className = "", children, ...props }, ref) => {
+    return (
+      <select
+        className={cn(
+          "flex h-10 w-full rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </select>
+    )
+  },
+)
+Select.displayName = "Select"
+
+// Button component
+const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(
+  ({ className = "", ...props }, ref) => {
+    return (
+      <button
+        className={cn(
+          "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+          "bg-[#0000FF] text-white hover:bg-blue-700 h-10 py-2 px-12 cursor-pointer",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Button.displayName = "Button"
+

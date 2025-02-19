@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 
 export default function FeaturesSection() {
@@ -26,7 +28,7 @@ export default function FeaturesSection() {
       {/* First Section */}
       <div className="bg-white py-8 border-b border-blue-600">
         <div className="mx-8">
-          <h2 className="text-blue-600 text-xl font-medium mb-4">Una red diseñada para tu éxito.</h2>
+          <h2 className=" text-xl text-[#0051FF] text-[17px] font-bold mb-4">Una red diseñada para tu éxito.</h2>
           <p className="text-gray-600 leading-relaxed">
             Somos tu red de asesores en el sector asegurador, transformando desafíos en oportunidades para tu
             crecimiento profesional. Con trayectoria comprobada, aportamos conocimiento profundo del mercado,
@@ -37,7 +39,7 @@ export default function FeaturesSection() {
       </div>
 
       {/* Second Section */}
-      <div className="bg-blue-600 py-8">
+      <div className="bg-[#0000FF] py-8">
         <div className="mx-8">
           <h3 className="text-white text-xl font-medium mb-8">Por qué más de 600 PAS eligen trabajar con Nimbus.</h3>
 
@@ -46,32 +48,29 @@ export default function FeaturesSection() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="perspective-1000"
+                className="group perspective-[1000px]"
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div
-                  className={`relative w-full h-64 transition-all duration-500 transform-style-3d ${
-                    hoveredCard === index ? "rotate-y-180" : ""
+                  className={`rounded-lg p-6 flex flex-col items-center justify-center text-center h-64 transition-all duration-500 transform-style-3d ${
+                    hoveredCard === index ? "bg-[#F2F2F2] [transform:rotateY(180deg)]" : "bg-white"
                   }`}
                 >
-                  {/* Front Side */}
-                  <div className="absolute inset-0 bg-white rounded-lg p-6 flex flex-col items-center justify-center text-center transition-all duration-300 backface-hidden">
-                    <div className="w-16 h-16 mb-4">
+                  <div
+                    className={`transition-transform duration-500 ${
+                      hoveredCard === index ? "[transform:rotateY(180deg)]" : ""
+                    }`}
+                  >
+                    <div className="w-20 h-20 mb-4 mx-auto flex items-center justify-center">
                       <img
                         src={card.img || "/placeholder.svg"}
                         alt={`Ícono de ${card.title}`}
                         className="w-16 h-16 object-contain"
                       />
                     </div>
-                    <h4 className="text-blue-600 text-lg font-medium mb-2">{card.title}</h4>
-                    <p className="text-gray-600">{card.text}</p>
-                  </div>
-
-                  {/* Back Side */}
-                  <div className="absolute inset-0 bg-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center transition-all duration-300 rotate-y-180 backface-hidden">
-                    <h4 className="text-blue-600 text-lg font-medium mb-2">{card.title}</h4>
-                    <p className="text-gray-600">{card.text}</p>
+                    <h4 className="text-[#0000FF] text-lg font-medium mb-2">{card.title}</h4>
+                    <p className="text-[#5E5E5E] text-sm">{card.text}</p>
                   </div>
                 </div>
               </div>
@@ -79,6 +78,7 @@ export default function FeaturesSection() {
           </div>
         </div>
       </div>
- </div>
-)
+    </div>
+  )
 }
+

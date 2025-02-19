@@ -2,7 +2,7 @@ import { dataImg } from '../data/dataImagenes';
 export const ImgCompanias = () => {
     return (
         <div className="">
-        <h2 className=" text-[#0051FF] text-2xl font-medium text-left ml-8 mt-10 mb-10">
+        <h2 className="text-[#0051FF] text-[17px] font-bold text-2xl text-left ml-8 mt-10 mb-10">
         Trabajamos con
         </h2>
         <div>

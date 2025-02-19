@@ -38,7 +38,7 @@ const Header: FC = () => {
 
           <a
             href="#"
-            className="inline-block px-6 py-2 md:px-8 md:py-3 bg-[#98FF98] hover:bg-[#7FFF7F]                 text-[#0000FF] text-[12px]  md:text-base font-semibold rounded transition-colors font-open-sans"
+            className="inline-block px-6 py-2 md:px-8 md:py-3 bg-[#98FF98] hover:bg-[#F2F2F2] text-[#0000FF] hover:text-[#0000FF] text-[12px]md:text-base font-semibold rounded transition-colors font-open-sans"
           >
             ¡Quiero formar parte!
           </a>

@@ -52,8 +52,43 @@ export const dataImg:dataImg[] = [
     },
     {
         id: 10,
+        titulo: "Asociart",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1722988244/ASOCIART_gsnalp.png"
+    },
+    {
+        id: 10,
+        titulo: "Parana",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1722988251/PARANA-color-2_wgtwqb.png"
+    },
+    {
+        id: 10,
+        titulo: "Iasper",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1722988248/Iapser-color-2_exrh39.png"
+    },
+    {
+        id: 10,
+        titulo: "Omint",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1722988251/OMINT_kh1gb7.png"
+    },
+    {
+        id: 10,
+        titulo: "San Patricio",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1722988253/SANPATRICIO-color-2_ta1ozc.png"
+    },
+    {
+        id: 10,
         titulo: "Integrity",
         foto: "https://res.cloudinary.com/dkk8nbi3b/image/upload/v1723477322/INTEGRITY_nlrpmd.png"
+    },
+    {
+        id: 10,
+        titulo: "El Norte",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1738581577/el_norte_color_uldnz6.png"
+    },
+    {
+        id: 10,
+        titulo: "Ike",
+        foto: "https://res.cloudinary.com/dewcgbpvp/image/upload/v1738581577/ike_color_kuvv4f.png"
     },
     
 ]
