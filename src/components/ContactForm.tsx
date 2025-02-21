@@ -1,22 +1,57 @@
 
 import * as React from "react"
-import { useState } from "react"
+import { useState,useRef } from "react"
+import emailjs from '@emailjs/browser';
+
 
 const cn = (...classes: string[]) => classes.filter(Boolean).join(" ")
 
+
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  const form = useRef<HTMLFormElement>(null);
+  interface dataForm  {
+    nombreApellido?: string,
+    email?: string,
+    telefono?: string,
+    provincia?: string,
+    consulta?: string,
+  }
+  
+  const dataform: dataForm = {
     nombreApellido: "",
     email: "",
     telefono: "",
     provincia: "",
     consulta: "",
+  }
+
+
+  const [formData, setFormData] = useState({
+  dataform
   })
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
-    console.log(formData)
+    console.log(formData)  
+    emailjs
+    .sendForm('service_ssef2qd', 'template_wfqsfxq', form.current, {
+      publicKey: '712q0EHzd1qeNzBv3',
+    })
+    .then(
+      () => {
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+
+    );
+    setFormData({...dataform}) 
+  
+ 
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -25,6 +60,7 @@ export default function ContactForm() {
       ...prev,
       [name]: value,
     }))
+  
   }
 
   return (
@@ -61,7 +97,7 @@ export default function ContactForm() {
 
         {/* Right side - Form */}
         <div className="w-full md:w-1/2 space-y-6">
-          <form onSubmit={handleSubmit} className="space-y-7 mt-20">
+          <form ref={form} onSubmit={handleSubmit} className="space-y-7 mt-20">
             <Input
               name="nombreApellido"
               placeholder="Nombre y Apellido"
@@ -117,7 +153,7 @@ export default function ContactForm() {
             />
 
             <div className="flex justify-end ">
-              <Button type="submit">Enviar</Button>
+              <Button  type="submit">Enviar</Button>
             </div>
           </form>
         </div>
