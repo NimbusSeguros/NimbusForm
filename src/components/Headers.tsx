@@ -1,3 +1,7 @@
+"use client"
+
+import type React from "react"
+
 import { useEffect, useState } from "react"
 import type { FC } from "react"
 
@@ -16,6 +20,14 @@ const Header: FC = () => {
       window.removeEventListener("resize", handleResize)
     }
   }, [])
+
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const contactSection = document.getElementById("contacto")
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   return (
     <header className="relative h-screen overflow-hidden bg-gradient-to-r from-[rgba(0,0,255,1)] to-[rgba(87,197,182,1)] lg:h-[100vh] xl:h-[100vh] 2xl:h-screen">
@@ -37,8 +49,9 @@ const Header: FC = () => {
           </p>
 
           <a
-            href="#"
-            className="inline-block px-6 py-2 md:px-8 md:py-3 bg-[#98FF98] hover:bg-[#F2F2F2] text-[#0000FF] hover:text-[#0000FF] text-[12px]md:text-base font-semibold rounded transition-colors font-open-sans"
+            href="#contacto"
+            onClick={handleScrollToContact}
+            className="inline-block px-6 py-2 md:px-8 md:py-3 bg-[#98FF98] hover:bg-[#F2F2F2] text-[#0000FF] hover:text-[#0000FF] text-[12px]md:text-base font-semibold rounded transition-colors font-open-sans scroll-smooth"
           >
             ¡Quiero formar parte!
           </a>
@@ -76,3 +89,4 @@ const Header: FC = () => {
 }
 
 export default Header
+

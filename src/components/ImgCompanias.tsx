@@ -1,9 +1,9 @@
 import { dataImg } from '../data/dataImagenes';
 export const ImgCompanias = () => {
     return (
-        <div className="">
-        <h2 className="text-[#0051FF] text-[17px] font-bold text-2xl text-left ml-8 mt-10 mb-10">
-        Trabajamos con
+        <div>
+        <h2 className="text-[#5E5E5E] text-[17px] font-bold text-2xl text-left ml-8 mt-10 mb-10">
+        Trabajá con las compañías líderes del mercado
         </h2>
         <div>
         

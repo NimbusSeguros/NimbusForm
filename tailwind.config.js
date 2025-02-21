@@ -1,12 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    theme: {
-      extend: {
-        fontFamily: {
-          'open-sans': ['Open Sans'],
-        },
-        screens: {
-            '3xl': '1440px', // breakpoint personalizado para 1280px de ancho
-          },
+  theme: {
+    extend: {
+      fontFamily: {
+        'open-sans': ['Open Sans', 'sans-serif'], // Agregar fallback
+      },
+      screens: {
+        '3xl': '1440px', // breakpoint personalizado
       },
     },
-  }
+  },
+  plugins: [],
+};

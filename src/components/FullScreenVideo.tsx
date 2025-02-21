@@ -1,63 +1,30 @@
-import { useState, useEffect, useRef } from "react"
+import { useRef } from "react"
 import video from "../video/Video Nimbus.mp4"
 
-export default function FullScreenVideo() {
-  const [aspectRatio, setAspectRatio] = useState("16:9")
+export default function TeamVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  useEffect(() => {
-    const updateAspectRatio = () => {
-      const ratio = window.innerWidth / window.innerHeight
-      setAspectRatio(ratio > 1 ? "16:9" : "9:16")
-    }
-
-    updateAspectRatio()
-    window.addEventListener("resize", updateAspectRatio)
-
-    return () => window.removeEventListener("resize", updateAspectRatio)
-  }, [])
-
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden && videoRef.current) {
-        videoRef.current.pause()
-      } else if (!document.hidden && videoRef.current) {
-        videoRef.current.play()
-      }
-    }
-
-    document.addEventListener("visibilitychange", handleVisibilityChange)
-
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange)
-    }
-  }, [])
-
   return (
-    <div className="relative w-full h-screen bg-white overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div
-          className={`w-full h-full max-w-[100vw] max-h-[100vh] ${
-            aspectRatio === "16:9" ? "aspect-video" : "aspect-[9/16]"
-          }`}
+    <div className="max-w-12xl mx-auto px-4 py-8">
+      <h2 className="text-xl text-[#5E5E5E] text-[17px] lg:text-[17px] 2xl:text-[17px] font-bold mb-4 ml-4 lg:ml-4">Conocé a nuestro equipo</h2>
+      <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          src={video}
+          title="Video Institucional"
+          controls
+          playsInline
+          loop
+          autoPlay
+          muted
+          preload="auto"
         >
-          <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            src={video}
-            title="Descripción del video"
-            controls
-            playsInline
-            loop
-            autoPlay
-            muted
-            preload="auto"
-          >
-            Tu navegador no soporta el elemento de video.
-          </video>
-        </div>
+          Tu navegador no soporta el elemento de video.
+        </video>
       </div>
-    </div>
+      </div>
   )
 }
+
 

@@ -30,7 +30,8 @@ export default function ContactForm() {
 
   return (
     <div
-      className="min-h-screen w-full bg-cover bg-center flex items-center justify-center p-4"
+      id="contacto"
+      className="2xl:min-h-[100vh] w-full bg-cover bg-center flex items-center justify-center p-4 md:min-h-[65vh]"
       style={{
         backgroundImage: `url('https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089633/Fondo_degrade_wse41g.png')`,
       }}
@@ -39,20 +40,22 @@ export default function ContactForm() {
         {/* Left side - Image */}
 
         <div className="w-full md:w-1/2">
-          <div className="relative w-full aspect-square md:aspect-auto md:h-[600px]">
-            <div>
-              <h1 className="text-xl text-white text-[17px] font-bold mb-4 -ml-10">
-                ¿Sos PAS y querés alcanzar mejores resultados?
-              </h1>
-              <p className="text-white text-lg -ml-10 w-full max-w-[1200px] whitespace-normal text-xl:text-[17px]">
-                Estamos listos para acompañarte. Completá el formulario y empezá a formar parte de nuestra red.
-              </p>
-            </div>
+  <div className="relative w-full aspect-square md:aspect-auto md:h-[600px]">
+    <div>
+      <h1 className="text-xl text-white lg:text-[17px] 2xl:text-[17px] lg:-ml-10 font-bold mb-4 -ml-1.5 2xl:-ml-92 2xl:-mt-25">
+        ¿Sos PAS y querés alcanzar mejores resultados?
+      </h1>
+      <p className="text-white lg:text-[17px] 2xl:text-[17px] text-lg -ml-1.5 lg:-ml-10 w-full whitespace-normal 2xl:-ml-92 2xl:mb-20">
+        Estamos listos para acompañarte. Completá el formulario y empezá a formar parte de nuestra red.
+      </p>
+    </div>
+
 
             <img
               src="https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089646/Foto_equipo_cojyrv.png"
               alt="Equipo Nimbus"
-              className="w-full h-full object-contain -ml-25 -mt-15 2xl:-ml-105 2xl:w-250% 2xl:h-full"
+              className="w-full h-auto object-contain -ml-12 mt-15 
+                        2xl:-ml-105 2xl:w-[40vw] 2xl:max-w-none 2xl:h-auto lg:mt-10 lg:-ml-25 2xl:-mt-10"
             />
           </div>
         </div>
@@ -69,7 +72,7 @@ export default function ContactForm() {
 
             <Input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
                 name="telefono"
                 type="tel"
