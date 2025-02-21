@@ -1,4 +1,3 @@
-"use client"
 
 import * as React from "react"
 import { useState } from "react"
@@ -82,7 +81,7 @@ export default function ContactForm() {
               />
 
               <Select name="provincia" value={formData.provincia} onChange={handleChange}>
-              <option value="buenosaires">Selecciona una provincia</option>
+              <option  value="Seleccione">Seleccione</option>
                 <option value="buenosaires">Buenos Aires</option>
                 <option value="catamarca">Catamarca</option>
                 <option value="chaco">Chaco</option>
@@ -117,7 +116,7 @@ export default function ContactForm() {
               maxLength={250}
             />
 
-            <div className="flex justify-end">
+            <div className="flex justify-end ">
               <Button type="submit">Enviar</Button>
             </div>
           </form>
@@ -187,7 +186,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HT
       <button
         className={cn(
           "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
-          "bg-[#0000FF] text-white hover:bg-blue-700 h-10 py-2 px-12 cursor-pointer",
+          "bg-[#0000FF] hover:bg-[#A2FF86] text-white hover:text-[#0000FF] h-10 py-2 px-12 cursor-pointer",
           className,
         )}
         ref={ref}

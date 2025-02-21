@@ -29,7 +29,7 @@ export default function UniqueFeatures() {
   return (
     <div className="w-full bg-gray-50 py-8">
       <div className="mx-8">
-        <h2 className="text-[#0051FF] text-[17px] font-bold text-2xl  mb-8">¿Qué hace único a Nimbus?</h2>
+        <h2 className="text-[#0000FF] text-[17px] font-open-sans font-bold mb-8">¿Qué hace único a Nimbus?</h2>
 
         <div className="grid grid-cols-1 gap-6">
           {features.map((feature, index) => (

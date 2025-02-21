@@ -29,7 +29,7 @@ export default function FeaturesSection() {
       <div className="bg-white py-8 border-b border-blue-600">
         <div className="mx-8">
           <h2 className=" text-xl text-[#0051FF] text-[17px] font-bold mb-4">Una red diseñada para tu éxito.</h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-[#5E5E5E] leading-relaxed font-open-sans">
             Somos tu red de asesores en el sector asegurador, transformando desafíos en oportunidades para tu
             crecimiento profesional. Con trayectoria comprobada, aportamos conocimiento profundo del mercado,
             experiencia en todas las ramas del seguro y un enfoque centrado en las mejores prácticas comerciales para
@@ -41,7 +41,7 @@ export default function FeaturesSection() {
       {/* Second Section */}
       <div className="bg-[#0000FF] py-8">
         <div className="mx-8">
-          <h3 className="text-white text-xl font-medium mb-8">Por qué más de 600 PAS eligen trabajar con Nimbus.</h3>
+          <h3 className="text-white text-[17px] font-open-sans font-medium mb-8">Por qué más de 600 PAS eligen trabajar con Nimbus.</h3>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

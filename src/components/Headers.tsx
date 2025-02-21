@@ -33,12 +33,13 @@ const Header: FC = () => {
     <header className="relative h-screen overflow-hidden bg-gradient-to-r from-[rgba(0,0,255,1)] to-[rgba(87,197,182,1)] lg:h-[100vh] xl:h-[100vh] 2xl:h-screen">
       <div className="@container max-w-full mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center h-full">
         <div className="max-w-2xl text-white z-10 text-left xl:mb-0 lg:-mb-20 2xl:mb-60 w-full lg:w-1/1 p-6 lg:p-8 lg:pl-[max(2rem,calc((100%-1800px)/2))]">
+          <a href="https://www.nimbusseguros.com" target="_blank" rel="noreferrer">
           <img
             src="https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089633/Logotipo_Nimbus_rtjadc.png"
             alt="Nimbus Logo"
             className="w-32 md:w-48 mb-4 md:mb-8 lg:mx-0 lg:-mt-10 xl:-mt-35 2xl:-mt-10-0"
           />
-
+          </a>
           <h1 className="text-3xl sm:text-2xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold mb-4 md:mb-6 font-open-sans lg:mt-20 2xl:mt-20 whitespace-normal sm:mt-10 mt-15">
             El broker que los productores eligen
           </h1>
