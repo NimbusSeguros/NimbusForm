@@ -26,10 +26,9 @@ export default function ContactForm() {
     consulta: "",
   }
 
-
-  const [formData, setFormData] = useState({
-  dataform
-  })
+  const [formData, setFormData] = useState<dataForm>({
+    ...dataform
+  });
 
 
 
