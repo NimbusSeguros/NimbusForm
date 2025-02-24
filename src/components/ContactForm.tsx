@@ -8,7 +8,8 @@ const cn = (...classes: string[]) => classes.filter(Boolean).join(" ")
 
 
 export default function ContactForm() {
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef <HTMLFormElement>(null);
+
   interface dataForm  {
     nombreApellido?: string,
     email?: string,
@@ -33,26 +34,31 @@ export default function ContactForm() {
 
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formData)  
-    emailjs
-    .sendForm('service_ssef2qd', 'template_wfqsfxq', form.current, {
-      publicKey: '712q0EHzd1qeNzBv3',
-    })
-    .then(
-      () => {
-        console.log('SUCCESS!');
-      },
-      (error) => {
-        console.log('FAILED...', error.text);
-      },
-
-    );
-    setFormData({...dataform}) 
+    e.preventDefault();
   
- 
-  }
+    if (!form.current) {
+      console.error("El formulario no está disponible");
+      return;
+    }
+  
+   
+  
+    emailjs
+      .sendForm('service_ssef2qd', 'template_wfqsfxq', form.current, {
+        publicKey: '712q0EHzd1qeNzBv3',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+  
+    setFormData({ ...dataform });
+  };
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -63,6 +69,7 @@ export default function ContactForm() {
   
   }
 
+  
   return (
     <div
       id="contacto"
@@ -116,7 +123,7 @@ export default function ContactForm() {
                 onChange={handleChange}
               />
 
-              <Select name="provincia" value={formData.provincia} onChange={handleChange}>
+              <Select name="provincia" value={formData.provincia } onChange={handleChange}>
               <option  value="Seleccione">Seleccione</option>
                 <option value="buenosaires">Buenos Aires</option>
                 <option value="catamarca">Catamarca</option>
