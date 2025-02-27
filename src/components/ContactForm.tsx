@@ -2,7 +2,7 @@
 import * as React from "react"
 import { useState,useRef } from "react"
 import emailjs from '@emailjs/browser';
-
+import { db, collection, addDoc } from "../firebase/firebaseConfig"
 
 const cn = (...classes: string[]) => classes.filter(Boolean).join(" ")
 
@@ -32,7 +32,9 @@ export default function ContactForm() {
 
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
     if (!form.current) {
@@ -40,24 +42,37 @@ export default function ContactForm() {
       return;
     }
   
-   
+    try {
+      // Guardar los datos en Firestore
+      await addDoc(collection(db, "contactos"), {
+        nombreApellido: formData.nombreApellido,
+        email: formData.email,
+        telefono: formData.telefono,
+        provincia: formData.provincia,
+        consulta: formData.consulta,
+        fecha: new Date().toISOString(),
+      });
   
-    emailjs
-      .sendForm('service_ssef2qd', 'template_wfqsfxq', form.current, {
-        publicKey: '712q0EHzd1qeNzBv3',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
+      console.log("Datos guardados en Firebase");
+  
+      // Enviar email con EmailJS
+      await emailjs.sendForm(
+        "service_ssef2qd",
+        "template_wfqsfxq",
+        form.current,
+        {
+          publicKey: "712q0EHzd1qeNzBv3",
         }
       );
   
-    setFormData({ ...dataform });
-  };
+      console.log("Correo enviado con éxito");
   
+      // Limpiar formulario
+      setFormData({ ...dataform });
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
