@@ -28,7 +28,7 @@ export default function FeaturesSection() {
       {/* First Section */}
       <div className="bg-white py-8 border-b border-blue-600">
         <div className="mx-8">
-          <h2 className=" text-xl text-[#0051FF] text-[17px] font-bold mb-4">Una red diseñada para tu éxito.</h2>
+          <h2 className=" text-xl text-[#0000FF] text-[17px] font-bold mb-4">Una red diseñada para tu éxito.</h2>
           <p className="text-[#5E5E5E] leading-relaxed font-open-sans">
             Somos tu red de asesores en el sector asegurador, transformando desafíos en oportunidades para tu
             crecimiento profesional. Con trayectoria comprobada, aportamos conocimiento profundo del mercado,

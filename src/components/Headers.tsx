@@ -37,7 +37,7 @@ const Header: FC = () => {
           <img
             src="https://res.cloudinary.com/dgx3mbzfr/image/upload/v1738089633/Logotipo_Nimbus_rtjadc.png"
             alt="Nimbus Logo"
-            className="w-32 md:w-48 mb-4 md:mb-8 lg:mx-0 lg:-mt-10 xl:-mt-35 2xl:-mt-10-0"
+            className="w-32 md:w-48 mb-4 md:mb-8 lg:mx-0 lg:-mt-10 xl:-mt-25 2xl:-mt-40"
           />
           </a>
           <h1 className="text-3xl sm:text-2xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold mb-4 md:mb-6 font-open-sans lg:mt-20 2xl:mt-20 whitespace-normal sm:mt-10 mt-15">

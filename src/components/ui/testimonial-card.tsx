@@ -20,7 +20,7 @@ import { Card, CardContent } from "./Card"
               className="w-full h-full"
             />
           </div>
-          <h3 className="text-[#0051FF] font-medium mb-3 text-lg">
+          <h3 className="text-[#0000FF] font-medium mb-3 text-lg">
             {name}
           </h3>
           <p className="text-[#6B7280] text-base leading-relaxed">

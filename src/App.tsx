@@ -8,6 +8,8 @@ import ContactForm from './components/ContactForm'
 import FullScreenVideo from './components/FullScreenVideo'
 import HeroSection from './components/HeroSection'
 import Footer from './components/Footer'
+import '@fontsource-variable/open-sans';
+
 
 function App() {
  
